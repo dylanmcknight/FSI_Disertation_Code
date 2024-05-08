@@ -8,6 +8,8 @@
 %    Square145
 %    Square545
      Square2113
+
+%These meshes throw memory errors
 %   Square8321
 %    Square33025
 
