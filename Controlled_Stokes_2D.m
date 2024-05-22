@@ -250,8 +250,8 @@ LHSf(2*Mf+1:2*Mf+Mp,2*Mf+1:2*Mf+Mp) = vep*Massp;
 
 %% Define the generator for the semigroup, B matrix, and Kalman matrix in the control
 
-B = Massf;
-%B = eye(Mf);
+%B = Massf;
+B = eye(Mf);
 
 
 Kal = sparse(2*Mf+Mp,2*Mf);
@@ -301,10 +301,10 @@ Kal(2*Mf+1:2*Mf+Mp, Mf+1:2*Mf) = 1/vep*(Massp\(transpose(Bx)+transpose(By)))*(Ma
    Avep(J0f,J0f) = eye(M0f);
    Avep(J0f + Mf,J0f + Mf) = eye(M0f);
    
-   B(J0f,:) = 0;
-   B(:,J0f) = 0;
+%   B(J0f,:) = 0;
+%   B(:,J0f) = 0;
 
-   B(J0f,J0f) = eye(M0f);
+%   B(J0f,J0f) = eye(M0f);
    
 %    Kal(J0f,:) = 0;
 %    Kal(J0f + Mf,:) = 0;
