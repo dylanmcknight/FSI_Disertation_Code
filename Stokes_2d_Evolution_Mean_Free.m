@@ -348,7 +348,9 @@ RHSf = zeros(2*Mf + Mp,1);
     for tk = 2:1:time_steps
     RHSf(1:Mf) = dtf*exp(-time)*F1f + dtf*(1+exp(-time))*F1p + Massf*vn1;
     RHSf(Mf+1:2*Mf) = dtf*exp(-time)*F2f + dtf*(1+exp(-time))*F2p + Massf*vn2; 
-    RHSf(2*Mf+1:2*Mf + Mp) = vep*dtf*(-exp(-time))*Fdiv + vep*Massp*pn;
+    %RHSf(2*Mf+1:2*Mf + Mp) = vep*dtf*(-exp(-time))*Fdiv + vep*Massp*pn;
+    RHSf(2*Mf+1:2*Mf + Mp) = vep*Massp*pn;
+
 
    %Makes the RHS vector satisfy the Dirichlet data
    %This section handles interior nodes.
